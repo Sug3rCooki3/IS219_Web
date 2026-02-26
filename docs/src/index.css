@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-offwhite text-charcoal antialiased;
+    font-feature-settings: "ss01" on, "ss02" on;
+  }
+
+  ::selection {
+    background: rgba(109, 169, 180, 0.25);
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply px-6 sm:px-10 lg:px-16 py-16 sm:py-20;
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-wideplus text-bluegray/70;
+  }
+
+  .card {
+    @apply border border-charcoal/10 bg-white/70 backdrop-blur-sm;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center gap-2 rounded-full border border-charcoal/40 px-5 py-2 text-sm tracking-wide transition duration-300;
+  }
+
+  .ghost-button:hover {
+    box-shadow: 0 0 18px rgba(109, 169, 180, 0.25);
+  }
+}
+
+@layer utilities {
+  .soft-divider {
+    background: linear-gradient(
+      90deg,
+      rgba(30, 30, 30, 0),
+      rgba(48, 57, 70, 0.5),
+      rgba(30, 30, 30, 0)
+    );
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 800ms ease forwards;
+  }
+
+  .reveal-1 {
+    animation-delay: 120ms;
+  }
+
+  .reveal-2 {
+    animation-delay: 240ms;
+  }
+
+  .reveal-3 {
+    animation-delay: 360ms;
+  }
+
+  .reveal-4 {
+    animation-delay: 480ms;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
